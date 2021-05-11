@@ -32,6 +32,7 @@ function error() {
 }
 
 function updateRaspian(){
+	clear
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Actualizando${endColour}${purpleColour} RasperryPi${endColour}${grayColour}.${endColour}"
   sleep 2
   apt update > /dev/null 2>/dev/null
