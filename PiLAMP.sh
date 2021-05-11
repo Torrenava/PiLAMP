@@ -34,17 +34,18 @@ function error() {
 function updateRaspian(){
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Actualizando${endColour}${purpleColour} RasperryPi${endColour}${grayColour}.${endColour}"
   sleep 2
-  apt update > /dev/null 2>/devl/null
-  apt upgrade -y > /dev/null 2>/devl/null
+  apt update > /dev/null 2>/dev/null
+  apt upgrade -y > /dev/null 2>/dev/null
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Actualización Correcta.${endColour}"
   sleep 2
+
 }
 
 function installApache() {
   clear
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalando Apache.${endColour}"
   sleep 2
-  apt install -y apache2 > /dev/null 2>/devl/null
+  apt install -y apache2 > /dev/null 2>/dev/null
   if [ $? -eq 0 ]; then
    echo -e "\n${yellowColour}[*]${endColour}${grayColour} Apache instalado correctamente.${endColour}"
    sleep 2
@@ -61,11 +62,11 @@ function apachePostInstall() {
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Ajustando Permisos.${endColour}"
   sleep 2
   cd /var/www/
-  mkdir /var/www/html > /dev/null 2>/devl/null
-  chown www-data:www-data /var/www/html > /dev/null 2>/devl/null
-  find /var/www/html -type d -print -exec chmod 775 {} \ > /dev/null 2>/devl/null
-  find /var/www/html -type f -print -exec chmod 664 {} \ > /dev/null 2>/devl/null
-  usermod -aG www-data pi > /dev/null 2>/devl/null
+  mkdir /var/www/html > /dev/null 2>/dev/null
+  chown www-data:www-data /var/www/html > /dev/null 2>/dev/null
+  find /var/www/html -type d -print -exec chmod 775 {} \ > /dev/null 2>/dev/null
+  find /var/www/html -type f -print -exec chmod 664 {} \ > /dev/null 2>/dev/null
+  usermod -aG www-data pi > /dev/null 2>/dev/null
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Proceso Correcto.${endColour}"
   sleep 2
 
@@ -75,7 +76,7 @@ function installPHP() {
   clear
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalando PHP.${endColour}"
   sleep 2
-  apt install -y php libapache2-mod-php php-mysql > /dev/null 2>/devl/null
+  apt install -y php libapache2-mod-php php-mysql > /dev/null 2>/dev/null
   if [ $? -eq 0 ]; then
    echo -e "\n${yellowColour}[*]${endColour}${grayColour} PHP Instalado correctamente.${endColour}"
    sleep 2
@@ -90,7 +91,7 @@ function installMariaDB() {
   clear
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalando MariaDB.${endColour}"
   sleep 2
-  apt install -y mariadb-server > /dev/null 2>/devl/null
+  apt install -y mariadb-server > /dev/null 2>/dev/null
   if [ $? -eq 0 ]; then
    echo -e "\n${yellowColour}[*]${endColour}${grayColour} MariaDB Instalado correctamente.${endColour}"
    sleep 2
@@ -137,7 +138,7 @@ function installPHPMyAdmin() {
   clear
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalando PHPMyAdmin.${endColour}"
   sleep 2
-  apt install -y phpmyadmin php-mbstring php-gettext; > /dev/null 2>/devl/null
+  apt install -y phpmyadmin php-mbstring php-gettext; > /dev/null 2>/dev/null
   if [ $? -eq 0 ]; then
    echo -e "\n${yellowColour}[*]${endColour}${grayColour} PHPMyAdmin Instalado correctamente.${endColour}"
    sleep 2
@@ -155,3 +156,4 @@ function end() {
 
 # Main function
 updateRaspian
+installApache
