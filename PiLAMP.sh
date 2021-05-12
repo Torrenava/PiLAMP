@@ -156,8 +156,10 @@ function installPHPMyAdmin() {
   clear
 	tput civis
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalando PHPMyAdmin.${endColour}"
-  sleep 2
-  apt install -y phpmyadmin php-mbstring php-gettext > /dev/null 2>/dev/null
+  echo -e "\n${yellowColour}[*]${endColour}${grayColour} Complete la información cuando se le solicite.${endColour}\n\n"
+  sleep 4
+  clear
+  apt install -y phpmyadmin php-mbstring php-gettext 2>/dev/null
 	tput cnorm
   if [ $? -eq 0 ]; then
    echo -e "\n${yellowColour}[*]${endColour}${grayColour} PHPMyAdmin Instalado correctamente.${endColour}"
