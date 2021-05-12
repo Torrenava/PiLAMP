@@ -33,7 +33,7 @@ function error() {
 
 function dependencies1(){
 	tput civis
-	clear; dependencies=(apache2 php libapache2-mod-php php-mysql mariadb-server phpmyadmin php-mbstring php-gettext)
+	clear; dependencies=(apache2 php libapache2-mod-php php-mysql php-mbstring php-gettext)
 	echo -e "${yellowColour}[*]${endColour}${grayColour} Se van a instalar los programas de configuración automática.${endColour}"
 	echo -e "${yellowColour}[*]${endColour}${grayColour} Comprobando programas necesarios...${endColour}\n"
 	sleep 2
@@ -48,7 +48,7 @@ function dependencies1(){
 function dependencies2(){
 	tput civis
 	clear; dependencies=(mariadb-server phpmyadmin)
-	echo -e "${yellowColour}[*]${endColour}${grayColour} Se van a instalar los programas de configuración manual.${endColour}"
+	echo -e "${yellowColour}[*]${endColour}${grayColour} Se van a instalar los programas d configuración manual.${endColour}"
 	echo -e "${yellowColour}[*]${endColour}${grayColour} Comprobando programas necesarios...${endColour}\n"
 	sleep 2
 
@@ -57,14 +57,14 @@ function dependencies2(){
 		apt install $program -y 2>&1
 		sleep 1
 	done
-}
+} 
 
 function configApache(){
   clear
 	tput civis
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Ajustando Permisos.${endColour}"
   sleep 2
-	mkdir /var/www/html/
+	mkdir /var/www/html/ 2>/dev/null
 	chown www-data:www-data /var/www/
 	chmod -R 775 /var/www/
 	usermod -aG www-data pi > /dev/null 2>/dev/null
