@@ -6,7 +6,7 @@ _La forma más sencilla de instalar tu sistema LAMP en RaspberryPi_
 
 _Si acabas de instalar RaspbianOS en tu RaspberryPi, bastará con ejecutar el siguiente comando para comenzar automáticamente la instalación de todos los componentes necesarios._
 
-```
+```bash
 sudo apt update && sudo apt install git && git clone http://github.com/Torrenava/PiLAMP && sudo bash PiLAMP/PiLAMP.sh
 ```
 
